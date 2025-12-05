@@ -377,6 +377,7 @@ MonoBehaviour:
   healthBar: {fileID: 8957879766221734923}
   hurtSound: {fileID: 8300000, guid: 84a440e9762b40448917608b38a74d46, type: 3}
   deathSound: {fileID: 8300000, guid: 0f7682f4da5c3044a854538767b7339d, type: 3}
+  explosionPrefab: {fileID: 4761490144051146315, guid: 1f137e46a63889c45851ece95ebc0904, type: 3}
 --- !u!195 &3348196717509585288
 NavMeshAgent:
   m_ObjectHideFlags: 0

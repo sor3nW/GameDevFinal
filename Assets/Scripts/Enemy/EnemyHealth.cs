@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     public AudioClip hurtSound; // Drag your .mp3 or .wav file here
     public AudioClip deathSound;
     private AudioSource audioSource;
+
+    public GameObject explosionPrefab;
     void Start()
     {
         // Set health to full at start
@@ -47,6 +49,17 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        if (explosionPrefab != null)
+        {
+            // Spawn the explosion at the enemy's exact position and rotation
+            // We store the reference so we can force it to play if needed
+            GameObject explosionInstance = Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Destroy(explosionInstance, 1.6f);
+            // If it's a Particle System that doesn't auto-play, uncomment this:
+            // explosionInstance.GetComponent<ParticleSystem>().Play();
+
+            // Note: Since the prefab is set to auto-destroy, we don't need a line to destroy it here.
+        }
         // Add explosion sound or particles here later!
         Destroy(gameObject);
     }
